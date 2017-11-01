@@ -39,14 +39,14 @@ hbs.registerHelper('toUpperCase', (text) => {
 
 app.get('/', (req, res) => {
     res.render('home.hbs', {
-        pageTitle: 'Home Page',
+        pageTitle: 'Home',
         message: 'welcome message'
     });
 });
 
 app.get('/about', (req, res) => {
     res.render('about.hbs', {
-        pageTitle: 'About Page',
+        pageTitle: 'About',
         message: 'About message'
     });
 });
@@ -57,8 +57,15 @@ app.get('/bad', (req, res) => {
    })
 });
 
+// app.get('/cool', (req, res) => {
+//     res.send(cool());
+// });
+
 app.get('/cool', (req, res) => {
-    res.send(cool());
+    res.render('cool.hbs', {
+        pageTitle: 'Cool',
+        content: cool()
+    });
 });
 
 app.listen(port, () => {
