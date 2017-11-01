@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 //     res.render('maintenance.hbs');
 // //we not call next and we stop here
 // });
-//to not show other subpages we have to move it here
+//to not show other sub-pages we have to move it here
 app.use(express.static(__dirname + '/public'));
 
 hbs.registerHelper('getCurrentYear', () => {
@@ -53,7 +53,7 @@ app.get('/about', (req, res) => {
 
 app.get('/bad', (req, res) => {
    res.send({
-       errorMessage: 'sorry, somthing went wrong'
+       errorMessage: 'sorry, something went wrong'
    })
 });
 
